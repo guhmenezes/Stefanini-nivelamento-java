@@ -37,7 +37,7 @@ public class LambdaStream {
 		List<Pessoa> listaPessoasOrdenada2 = listaPessoasMaiores.stream().sorted((p1,p2) -> p2.getIdade() - p1.getIdade()).collect(Collectors.toList());
 		listaPessoasOrdenada2.forEach((p) -> System.out.println(p.getNome() + " - " + p.getIdade()));
 		
-		System.out.print("\nSoma das idades ");
+		System.out.print("\nSoma das idades: ");
 		Integer totalIdade = listaPessoasOrdenada.stream().map((p) -> p.getIdade()).reduce(0, (somaIdade, idade) -> somaIdade += idade);
 		System.out.print(totalIdade);
 	}
