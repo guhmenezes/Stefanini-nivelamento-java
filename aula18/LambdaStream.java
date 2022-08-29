@@ -18,12 +18,12 @@ public class LambdaStream {
 		listaNomes.forEach((n) -> System.out.println(n));
 		
 		// Stream retorna um stream, cria uma nova "lista"(cópia). Precisa converter para collect e armazenar em outra variavel list
-		// MAP sempre retorna uma stream do mesmo tamanho da "original".
+		// MAP sempre retorna uma stream do mesmo tamanho da "original"
 		System.out.println("\nLista de Pessoas\n");
 		List<Pessoa> listaPessoas = listaNomes.stream().map((n) -> new Pessoa(n, gerarIdade(15,30))).collect(Collectors.toList());
 		listaPessoas.forEach((p) -> System.out.println(p.getNome() + ", " + p.getIdade() + " anos"));
 		
-		// FILTER retorna um stream "lista" filtrada pelos parametros passados.
+		// FILTER retorna um stream "lista" filtrada pelos parametros passados
 		System.out.println("\nLista de Pessoas Maiores de Idade\n");
 		List<Pessoa> listaPessoasMaiores = listaPessoas.stream().filter((p) -> p.getIdade() >= 18).collect(Collectors.toList());
 		listaPessoasMaiores.forEach((p) -> System.out.println(p.getNome() + " tem " + p.getIdade() +" anos portanto é Maior de idade"));
